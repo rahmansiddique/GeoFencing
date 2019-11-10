@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class WifiUtilities {
+    
+    //MARK:- Properties
+    static let shared = WifiUtilities()
+    
+    //MARK:- Initializer
+    init() { }
+    
+}

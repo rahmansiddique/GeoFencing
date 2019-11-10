@@ -18,6 +18,9 @@
 		8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8C23782E1200A690F5 /* WifiUtilities.swift */; };
 		8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8E23782E2D00A690F5 /* LocationManager.swift */; };
 		8837AD9423782F9400A690F5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8837AD9323782F9400A690F5 /* ExternalAccessory.framework */; };
+		8837AD96237832EF00A690F5 /* GeofenceZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD95237832EF00A690F5 /* GeofenceZone.swift */; };
+		8837AD9823783EA300A690F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD9723783EA300A690F5 /* Extensions.swift */; };
+		8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD992378484B00A690F5 /* WifiInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		8837AD8E23782E2D00A690F5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8837AD9123782F9400A690F5 /* GeoFencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoFencing.entitlements; sourceTree = "<group>"; };
 		8837AD9323782F9400A690F5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		8837AD95237832EF00A690F5 /* GeofenceZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceZone.swift; sourceTree = "<group>"; };
+		8837AD9723783EA300A690F5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8837AD992378484B00A690F5 /* WifiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				8837AD8923782DB700A690F5 /* Constants.swift */,
+				8837AD9723783EA300A690F5 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -225,6 +232,8 @@
 		8837AD9023782E3A00A690F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD95237832EF00A690F5 /* GeofenceZone.swift */,
+				8837AD992378484B00A690F5 /* WifiInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,11 +317,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */,
 				8837AD8A23782DB700A690F5 /* Constants.swift in Sources */,
+				8837AD9823783EA300A690F5 /* Extensions.swift in Sources */,
 				8837AD662378279400A690F5 /* MainViewController.swift in Sources */,
 				8837AD622378279400A690F5 /* AppDelegate.swift in Sources */,
 				8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */,
 				8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */,
+				8837AD96237832EF00A690F5 /* GeofenceZone.swift in Sources */,
 				8837AD8823782C9400A690F5 /* BaseVC.swift in Sources */,
 				8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */,
 			);
