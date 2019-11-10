@@ -11,13 +11,10 @@ import Foundation
 struct WifiInfo{
     //MARK:- Properties
     var wifiSSID:String
-    var interface:String
-    var bssid:String
 
-    init(_ wifiSSID:String, _ interface:String, _ bssid:String) {
+    init(_ wifiSSID:String) {
         self.wifiSSID           = wifiSSID
-        self.interface          = interface
-        self.bssid              = bssid
+       
     }
 }
 
@@ -27,6 +24,6 @@ extension WifiInfo:Comparable{
         return false
     }
     static func == (lhs: WifiInfo, rhs: WifiInfo) -> Bool {
-        return lhs.wifiSSID == rhs.wifiSSID && lhs.interface == rhs.interface && lhs.bssid == rhs.bssid
+        return lhs.wifiSSID == rhs.wifiSSID
     }
 }

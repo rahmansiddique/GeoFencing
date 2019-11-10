@@ -13,11 +13,13 @@ import MapKit
 struct GeofenceZone {
     
     //MARK:- Properties
-    var wifiInfo:WifiInfo
-    var region:CLCircularRegion
+    var wifiInfo:WifiInfo?
+    var region:CLCircularRegion?
     
     //MARK:- Initializer
-    init(_ wifiInfo:WifiInfo, _ region:CLCircularRegion) {
+    init() { }
+    
+    init(_ wifiInfo:WifiInfo?, _ region:CLCircularRegion?) {
         self.wifiInfo           = wifiInfo
         self.region             = region
     }

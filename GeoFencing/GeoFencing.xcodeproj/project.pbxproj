@@ -14,13 +14,12 @@
 		8837AD6E2378279600A690F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8837AD6C2378279600A690F5 /* LaunchScreen.storyboard */; };
 		8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD752378288000A690F5 /* SceneDelegate.swift */; };
 		8837AD8823782C9400A690F5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8723782C9400A690F5 /* BaseVC.swift */; };
-		8837AD8A23782DB700A690F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8923782DB700A690F5 /* Constants.swift */; };
-		8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8C23782E1200A690F5 /* WifiUtilities.swift */; };
+		8837AD8D23782E1200A690F5 /* WifiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8C23782E1200A690F5 /* WifiManager.swift */; };
 		8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8E23782E2D00A690F5 /* LocationManager.swift */; };
 		8837AD9423782F9400A690F5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8837AD9323782F9400A690F5 /* ExternalAccessory.framework */; };
 		8837AD96237832EF00A690F5 /* GeofenceZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD95237832EF00A690F5 /* GeofenceZone.swift */; };
-		8837AD9823783EA300A690F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD9723783EA300A690F5 /* Extensions.swift */; };
 		8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD992378484B00A690F5 /* WifiInfo.swift */; };
+		8837ADA323788CB100A690F5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837ADA123788CB100A690F5 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +32,14 @@
 		8837AD6F2378279600A690F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8837AD752378288000A690F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8837AD8723782C9400A690F5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		8837AD8923782DB700A690F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8837AD8C23782E1200A690F5 /* WifiUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiUtilities.swift; sourceTree = "<group>"; };
+		8837AD8C23782E1200A690F5 /* WifiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiManager.swift; sourceTree = "<group>"; };
 		8837AD8E23782E2D00A690F5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8837AD9123782F9400A690F5 /* GeoFencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoFencing.entitlements; sourceTree = "<group>"; };
 		8837AD9323782F9400A690F5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		8837AD95237832EF00A690F5 /* GeofenceZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceZone.swift; sourceTree = "<group>"; };
-		8837AD9723783EA300A690F5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8837AD992378484B00A690F5 /* WifiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInfo.swift; sourceTree = "<group>"; };
+		8837ADA023788CB100A690F5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8837ADA123788CB100A690F5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				8837AD8B23782DBE00A690F5 /* Utilities */,
-				8837AD7A23782B1300A690F5 /* Shared */,
 				8837AD7923782AF500A690F5 /* Base Layers */,
 				8837AD7823782ADA00A690F5 /* Managers */,
 			);
@@ -99,6 +97,7 @@
 		8837AD7823782ADA00A690F5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD8C23782E1200A690F5 /* WifiManager.swift */,
 				8837AD8E23782E2D00A690F5 /* LocationManager.swift */,
 			);
 			path = Managers;
@@ -110,15 +109,6 @@
 				8837AD8723782C9400A690F5 /* BaseVC.swift */,
 			);
 			path = "Base Layers";
-			sourceTree = "<group>";
-		};
-		8837AD7A23782B1300A690F5 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				8837AD8923782DB700A690F5 /* Constants.swift */,
-				8837AD9723783EA300A690F5 /* Extensions.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		8837AD7B23782B2400A690F5 /* Resources */ = {
@@ -224,7 +214,7 @@
 		8837AD8B23782DBE00A690F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8837AD8C23782E1200A690F5 /* WifiUtilities.swift */,
+				8837AD9F23788CA300A690F5 /* Reachability */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -244,6 +234,15 @@
 				8837AD9323782F9400A690F5 /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8837AD9F23788CA300A690F5 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8837ADA023788CB100A690F5 /* Reachability.h */,
+				8837ADA123788CB100A690F5 /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,15 +317,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */,
-				8837AD8A23782DB700A690F5 /* Constants.swift in Sources */,
-				8837AD9823783EA300A690F5 /* Extensions.swift in Sources */,
 				8837AD662378279400A690F5 /* MainViewController.swift in Sources */,
 				8837AD622378279400A690F5 /* AppDelegate.swift in Sources */,
 				8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */,
 				8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */,
+				8837ADA323788CB100A690F5 /* Reachability.swift in Sources */,
 				8837AD96237832EF00A690F5 /* GeofenceZone.swift in Sources */,
 				8837AD8823782C9400A690F5 /* BaseVC.swift in Sources */,
-				8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */,
+				8837AD8D23782E1200A690F5 /* WifiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,14 +469,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GeoFencing/GeoFencing.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C383N3HMFY;
 				INFOPLIST_FILE = GeoFencing/Configurations/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = systemsltd.GeoFencing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.GeoFencing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -489,14 +490,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GeoFencing/GeoFencing.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C383N3HMFY;
 				INFOPLIST_FILE = GeoFencing/Configurations/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = systemsltd.GeoFencing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.GeoFencing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

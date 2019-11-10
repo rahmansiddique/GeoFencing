@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EBA95AD6-92FB-4653-9160-82623582B9FA"
+            uuid = "961D808C-34CA-4C2B-A7E4-41EBFAC73CCD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GeoFencing/Core Logic/Managers/LocationManager.swift"
+            filePath = "GeoFencing/Modules/Main/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "locationManager(_:didChangeAuthorization:)"
+            landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

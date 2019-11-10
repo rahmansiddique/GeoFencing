@@ -80,7 +80,6 @@ extension LocationManager:CLLocationManagerDelegate{
     //MARK: - CLLocationManagerDelegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //MARK: - Locations are being fetched here
-        print("Location updated")
         for delgate in delegates{
             delgate?.locationManager(manager, didUpdateLocations: locations)
         }
@@ -88,14 +87,12 @@ extension LocationManager:CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         //MARK: - Failed to update the location
-        print("Failed to fetch locations \(error.localizedDescription)" )
         for delgate in delegates{
             delgate?.locationManager(manager, didFailWithError: error)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("Authorization status changed")
         for delgate in delegates{
             delgate?.locationManager(manager, didChangeAuthorization: status)
         }
