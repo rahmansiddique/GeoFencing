@@ -25,23 +25,15 @@ class MainViewController: BaseVC {
     //MARK: - Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let _ = LocationManager.shared.setDelegate(for: self as LocationManagerDelegate)
         setupInitialGeoFence()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupReachability()
     }
-    
-    //MARK: -IBActions
 
-    @IBAction func saveAndRestartTapped(_ sender: Any) {
-    }
-    
-    
     //MARK: - Functions
     
     func setupInitialGeoFence(){
@@ -107,8 +99,7 @@ class MainViewController: BaseVC {
     }
     
     
-    //MARK: - Obeservers
-
+    //MARK: - Selectors
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -134,9 +125,6 @@ class MainViewController: BaseVC {
     }
 }
 
-
-
-
 extension MainViewController:UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -153,11 +141,6 @@ extension MainViewController:UITextFieldDelegate{
         updateUI()
     }
 }
-
-
-
-
-
 
 extension MainViewController :LocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -179,6 +162,5 @@ extension MainViewController :LocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     }
-    
     
 }
