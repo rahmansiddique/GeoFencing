@@ -14,6 +14,10 @@
 		8837AD6E2378279600A690F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8837AD6C2378279600A690F5 /* LaunchScreen.storyboard */; };
 		8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD752378288000A690F5 /* SceneDelegate.swift */; };
 		8837AD8823782C9400A690F5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8723782C9400A690F5 /* BaseVC.swift */; };
+		8837AD8A23782DB700A690F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8923782DB700A690F5 /* Constants.swift */; };
+		8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8C23782E1200A690F5 /* WifiUtilities.swift */; };
+		8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8E23782E2D00A690F5 /* LocationManager.swift */; };
+		8837AD9423782F9400A690F5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8837AD9323782F9400A690F5 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,11 @@
 		8837AD6F2378279600A690F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8837AD752378288000A690F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8837AD8723782C9400A690F5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		8837AD8923782DB700A690F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8837AD8C23782E1200A690F5 /* WifiUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiUtilities.swift; sourceTree = "<group>"; };
+		8837AD8E23782E2D00A690F5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8837AD9123782F9400A690F5 /* GeoFencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoFencing.entitlements; sourceTree = "<group>"; };
+		8837AD9323782F9400A690F5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8837AD9423782F9400A690F5 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +54,7 @@
 			children = (
 				8837AD602378279400A690F5 /* GeoFencing */,
 				8837AD5F2378279400A690F5 /* Products */,
+				8837AD9223782F9400A690F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,7 @@
 		8837AD602378279400A690F5 /* GeoFencing */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD9123782F9400A690F5 /* GeoFencing.entitlements */,
 				8837AD7F23782BC600A690F5 /* Configurations */,
 				8837AD7723782A5F00A690F5 /* Core Logic */,
 				8837AD7B23782B2400A690F5 /* Resources */,
@@ -70,6 +82,7 @@
 		8837AD7723782A5F00A690F5 /* Core Logic */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD8B23782DBE00A690F5 /* Utilities */,
 				8837AD7A23782B1300A690F5 /* Shared */,
 				8837AD7923782AF500A690F5 /* Base Layers */,
 				8837AD7823782ADA00A690F5 /* Managers */,
@@ -80,6 +93,7 @@
 		8837AD7823782ADA00A690F5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD8E23782E2D00A690F5 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -95,6 +109,7 @@
 		8837AD7A23782B1300A690F5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD8923782DB700A690F5 /* Constants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -129,6 +144,7 @@
 		8837AD7E23782B6C00A690F5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8837AD9023782E3A00A690F5 /* Models */,
 				8837AD8323782C1B00A690F5 /* Controllers */,
 				8837AD8223782C1100A690F5 /* Views */,
 			);
@@ -196,6 +212,29 @@
 				8837AD6C2378279600A690F5 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8837AD8B23782DBE00A690F5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8837AD8C23782E1200A690F5 /* WifiUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8837AD9023782E3A00A690F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8837AD9223782F9400A690F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8837AD9323782F9400A690F5 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8837AD8A23782DB700A690F5 /* Constants.swift in Sources */,
 				8837AD662378279400A690F5 /* MainViewController.swift in Sources */,
 				8837AD622378279400A690F5 /* AppDelegate.swift in Sources */,
+				8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */,
 				8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */,
 				8837AD8823782C9400A690F5 /* BaseVC.swift in Sources */,
+				8837AD8D23782E1200A690F5 /* WifiUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +458,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GeoFencing/GeoFencing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GeoFencing/Info.plist;
+				INFOPLIST_FILE = GeoFencing/Configurations/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,8 +476,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GeoFencing/GeoFencing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GeoFencing/Info.plist;
+				INFOPLIST_FILE = GeoFencing/Configurations/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
