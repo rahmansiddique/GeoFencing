@@ -37,7 +37,7 @@ class MainViewController: BaseVC {
     //MARK: - Functions
     
     func setupInitialGeoFence(){
-        self.geoFenceZone.wifiInfo = WifiManager.shared.getConnectedWifiInfo().first
+        self.geoFenceZone.wifiSSID = WifiManager.shared.getConnectedWifiSSID().first
         // Hardcoding my current cordinates until the new cordinates arrive
         self.geoFenceZone.region = CLCircularRegion(center: CLLocationCoordinate2DMake(31.56506294147416, 74.28639842354846), radius: 1000, identifier: "defaultRegion")
         
@@ -71,8 +71,8 @@ class MainViewController: BaseVC {
     func isDeviceInsideGeoFence()->Bool{
         var isInsideGeoFence = false
         
-        if let currentWifi = self.geoFenceZone.wifiInfo{
-            if currentWifi.wifiSSID == self.ssidTextField.text ?? ""{
+        if let currentWifiSSID = self.geoFenceZone.wifiSSID{
+            if currentWifiSSID == self.ssidTextField.text ?? ""{
                 isInsideGeoFence = true
             }
         }
@@ -120,7 +120,7 @@ class MainViewController: BaseVC {
             print("Network not reachable")
         }
         // Update the fence with the new WiFi settings
-        self.geoFenceZone.wifiInfo = WifiManager.shared.getConnectedWifiInfo().first
+        self.geoFenceZone.wifiSSID = WifiManager.shared.getConnectedWifiSSID().first
         updateUI()
     }
 }

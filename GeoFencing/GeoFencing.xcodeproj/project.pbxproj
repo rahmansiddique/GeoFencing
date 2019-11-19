@@ -18,8 +18,8 @@
 		8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD8E23782E2D00A690F5 /* LocationManager.swift */; };
 		8837AD9423782F9400A690F5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8837AD9323782F9400A690F5 /* ExternalAccessory.framework */; };
 		8837AD96237832EF00A690F5 /* GeofenceZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD95237832EF00A690F5 /* GeofenceZone.swift */; };
-		8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837AD992378484B00A690F5 /* WifiInfo.swift */; };
 		8837ADA323788CB100A690F5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837ADA123788CB100A690F5 /* Reachability.swift */; };
+		88D253ED23848B34005C3D84 /* GeofenceZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D253EC23848B34005C3D84 /* GeofenceZoneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +37,9 @@
 		8837AD9123782F9400A690F5 /* GeoFencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoFencing.entitlements; sourceTree = "<group>"; };
 		8837AD9323782F9400A690F5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		8837AD95237832EF00A690F5 /* GeofenceZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceZone.swift; sourceTree = "<group>"; };
-		8837AD992378484B00A690F5 /* WifiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInfo.swift; sourceTree = "<group>"; };
 		8837ADA023788CB100A690F5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8837ADA123788CB100A690F5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		88D253EC23848B34005C3D84 /* GeofenceZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceZoneViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +141,7 @@
 		8837AD7E23782B6C00A690F5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				88D253EB23848B14005C3D84 /* ViewModels */,
 				8837AD9023782E3A00A690F5 /* Models */,
 				8837AD8323782C1B00A690F5 /* Controllers */,
 				8837AD8223782C1100A690F5 /* Views */,
@@ -223,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				8837AD95237832EF00A690F5 /* GeofenceZone.swift */,
-				8837AD992378484B00A690F5 /* WifiInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +243,14 @@
 				8837ADA123788CB100A690F5 /* Reachability.swift */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		88D253EB23848B14005C3D84 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				88D253EC23848B34005C3D84 /* GeofenceZoneViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8837AD9A2378484B00A690F5 /* WifiInfo.swift in Sources */,
 				8837AD662378279400A690F5 /* MainViewController.swift in Sources */,
+				88D253ED23848B34005C3D84 /* GeofenceZoneViewModel.swift in Sources */,
 				8837AD622378279400A690F5 /* AppDelegate.swift in Sources */,
 				8837AD8F23782E2D00A690F5 /* LocationManager.swift in Sources */,
 				8837AD762378288000A690F5 /* SceneDelegate.swift in Sources */,

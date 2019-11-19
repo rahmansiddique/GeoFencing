@@ -18,11 +18,11 @@ class WifiManager{
     init() { }
     
     
-    func getConnectedWifiInfo() -> Array<WifiInfo> {
+    func getConnectedWifiSSID() -> Array<String> {
         guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
             return []
         }
-        let wifiInfo:[WifiInfo] = interfaceNames.compactMap{ name in
+        let wifiInfo:[String] = interfaceNames.compactMap{ name in
             guard let info = CNCopyCurrentNetworkInfo(name as CFString) as? [String:AnyObject] else {
                 return nil
             }
@@ -32,7 +32,7 @@ class WifiManager{
             guard let _ = info[kCNNetworkInfoKeyBSSID as String] as? String else {
                 return nil
             }
-            return WifiInfo(ssid)
+            return ssid
         }
         return wifiInfo
     }
