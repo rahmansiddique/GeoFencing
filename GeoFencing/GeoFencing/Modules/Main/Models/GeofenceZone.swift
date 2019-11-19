@@ -24,14 +24,3 @@ struct GeofenceZone {
         self.region             = region
     }
 }
-
-extension GeofenceZone:Comparable{
-    static func < (lhs: GeofenceZone, rhs: GeofenceZone) -> Bool {
-        //MARK: No need to override this operator
-        return false
-    }
-    static func == (lhs: GeofenceZone, rhs: GeofenceZone) -> Bool {
-        if lhs.wifiInfo == rhs.wifiInfo {return true}
-        return false
-    }
-}

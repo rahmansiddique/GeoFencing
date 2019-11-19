@@ -17,13 +17,3 @@ struct WifiInfo{
        
     }
 }
-
-extension WifiInfo:Comparable{
-    static func < (lhs: WifiInfo, rhs: WifiInfo) -> Bool {
-        //MARK: No need to override this operator
-        return false
-    }
-    static func == (lhs: WifiInfo, rhs: WifiInfo) -> Bool {
-        return lhs.wifiSSID == rhs.wifiSSID
-    }
-}
