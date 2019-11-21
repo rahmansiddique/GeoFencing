@@ -12,7 +12,7 @@ import UIKit
 
 //MARK: - Custom LocationManagerDelegates
 
-protocol LocationManagerDelegate:class {
+protocol LocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)

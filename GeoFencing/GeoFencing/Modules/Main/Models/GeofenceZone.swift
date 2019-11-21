@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-struct GeofenceZone {
+struct GeofenceZone{
     
     //MARK:- Properties
     var wifiSSID:String?
@@ -23,4 +23,6 @@ struct GeofenceZone {
         self.region             = region
         self.wifiSSID           = wifiSSID
     }
+    
+    
 }
