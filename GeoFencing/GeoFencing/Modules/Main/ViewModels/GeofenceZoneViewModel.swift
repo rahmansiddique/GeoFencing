@@ -46,9 +46,13 @@ class GeofenceZoneViewModel:NSObject{
     init(_ geoFenceZone : GeofenceZone = GeofenceZone()) {
         self.observableModel = ObservableModel(geoFenceZone)
         super.init()
-        let _ = LocationManager.shared.setDelegate(for: self as LocationManagerDelegate)
+        addLocationChangeObserver()
         setupReachability()
         setupModelChangeObserver()
+    }
+    
+    deinit {
+        LocationManager.shared.removeLocationUpdateObserver(self)
     }
     
     //MARK: - Selectors
@@ -58,6 +62,22 @@ class GeofenceZoneViewModel:NSObject{
     }
     
     //MARK: - Functions
+    
+    private func addLocationChangeObserver(){
+        LocationManager.shared.addLocationUpdateObserver(self) { [weak self]  (manager, locations) in
+            
+            guard let weakSelf = self else{return}
+            guard let latestLocation = locations.first else{return}
+            
+            if !weakSelf.isFirstTimeLocationAddedToGeoFence{
+                weakSelf.deviceCurrentLocation = latestLocation
+                weakSelf.isFirstTimeLocationAddedToGeoFence = true
+                let region = CLCircularRegion(center: latestLocation.coordinate, radius: weakSelf.radius, identifier: "defaultRegion")
+                weakSelf.observableModel.value.region = region
+                weakSelf.defaultRegion = region
+            }
+        }
+    }
     
     private func setupModelChangeObserver(){
         observableModel.addAndNotify(observer: self, completionHandler: { [weak self] (model) in
@@ -127,25 +147,5 @@ class GeofenceZoneViewModel:NSObject{
     }
     func getZonesCurrentSSID()->String?{
         return self.observableModel.value.wifiSSID
-    }
-}
-
-extension GeofenceZoneViewModel:LocationManagerDelegate{
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let latestLocation = locations.first else{return}
-
-        if !isFirstTimeLocationAddedToGeoFence{
-            deviceCurrentLocation = latestLocation
-            isFirstTimeLocationAddedToGeoFence = true
-            let region = CLCircularRegion(center: latestLocation.coordinate, radius: radius, identifier: "defaultRegion")
-            self.observableModel.value.region = region
-            self.defaultRegion = region
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     }
 }

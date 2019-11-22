@@ -23,6 +23,4 @@ struct GeofenceZone{
         self.region             = region
         self.wifiSSID           = wifiSSID
     }
-    
-    
 }

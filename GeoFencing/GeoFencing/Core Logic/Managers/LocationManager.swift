@@ -10,21 +10,13 @@ import Foundation
 import CoreLocation
 import UIKit
 
-//MARK: - Custom LocationManagerDelegates
-
-protocol LocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
-}
-
-
 class LocationManager:NSObject {
 
     //MARK: - Properties
     static let shared   = LocationManager()
-    private var locationManager = CLLocationManager()
-    private var delegates:[LocationManagerDelegate?] = [LocationManagerDelegate?]()
+    private var locationManager = CLLocationManager()    
+    private var observersList = [String:LocationUpdateHandler]()
+    typealias LocationUpdateHandler = ((_ manager: CLLocationManager,  _ locations: [CLLocation])->Void)
     
     //MARK:- Initializer
     override init() {
@@ -36,16 +28,13 @@ class LocationManager:NSObject {
     
     //MARK: - Functions
     
-    func setDelegate(for controllerReference:LocationManagerDelegate?){
-        delegates.append(controllerReference)
+    func addLocationUpdateObserver(_ observer: NSObject, completionHandler: @escaping LocationUpdateHandler) {
+        observersList[observer.description] = completionHandler
     }
-    
-    func removeDelegate(for controllerReference:LocationManagerDelegate?){
-        delegates.removeAll { (delegate) -> Bool in
-            return delegate == nil
-        }
+
+    func removeLocationUpdateObserver(_ observer: NSObject){
+        observersList.removeValue(forKey: observer.description)
     }
-    
     
     private func setupLocationManager(){
         if CLLocationManager.locationServicesEnabled() {
@@ -79,22 +68,13 @@ class LocationManager:NSObject {
 extension LocationManager:CLLocationManagerDelegate{
     //MARK: - CLLocationManagerDelegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //MARK: - Locations are being fetched here
-        for delgate in delegates{
-            delgate?.locationManager(manager, didUpdateLocations: locations)
-        }
+        //MARK: - Locations are being fetched here and posted to observer
+        observersList.forEach({$0.value(manager, locations)})
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //MARK: - Failed to update the location
-        for delgate in delegates{
-            delgate?.locationManager(manager, didFailWithError: error)
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        for delgate in delegates{
-            delgate?.locationManager(manager, didChangeAuthorization: status)
-        }
     }
 }

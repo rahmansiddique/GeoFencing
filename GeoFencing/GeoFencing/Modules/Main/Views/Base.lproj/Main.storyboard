@@ -42,8 +42,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-LM-j7d">
-                                        <rect key="frame" x="127.5" y="202.5" width="159" height="30"/>
-                                        <state key="normal" title="Switch To Default Zone"/>
+                                        <rect key="frame" x="125.5" y="202.5" width="163" height="30"/>
+                                        <state key="normal" title="Switch To First Location"/>
                                         <connections>
                                             <action selector="switchToDefaultZoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSZ-Ym-p9S"/>
                                         </connections>

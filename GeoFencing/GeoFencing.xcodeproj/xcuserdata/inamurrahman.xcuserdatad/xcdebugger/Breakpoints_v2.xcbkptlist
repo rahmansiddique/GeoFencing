@@ -3,4 +3,54 @@
    uuid = "55786070-D84A-4A33-B0DD-DFB2DAF71740"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67184B4E-D09D-46D2-B5C3-67DFB8D7DB4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GeoFencing/Core Logic/Managers/LocationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "67184B4E-D09D-46D2-B5C3-67DFB8D7DB4C - f30d3c423678652c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GeoFencing.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "GeoFencing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inamurrahman/Documents/Projects/Inam%20Ur%20Rahman/GeoFencing/GeoFencing/GeoFencing/Core%20Logic/Managers/LocationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "67184B4E-D09D-46D2-B5C3-67DFB8D7DB4C - 213734af98894336"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((key: Swift.String, value: (__C.CLLocationManager, Swift.Array&lt;__C.CLLocation&gt;) -&gt; ())) -&gt; () in GeoFencing.LocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "GeoFencing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inamurrahman/Documents/Projects/Inam%20Ur%20Rahman/GeoFencing/GeoFencing/GeoFencing/Core%20Logic/Managers/LocationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
