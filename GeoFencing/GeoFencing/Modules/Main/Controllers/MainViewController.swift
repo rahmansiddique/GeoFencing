@@ -16,6 +16,8 @@ class MainViewController: BaseVC {
     var geoFenceZoneViewModel:GeofenceZoneViewModel = GeofenceZoneViewModel()
     let annotation = MKPointAnnotation()
 
+    var isSpanSet = false
+    
     
     //MARK: - IBOutlets
     @IBOutlet weak var ssidTextField: UITextField!
@@ -72,9 +74,12 @@ class MainViewController: BaseVC {
         annotation.coordinate = center
         mapView.addAnnotation(annotation)
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: true)
+        if !isSpanSet{
+            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let region = MKCoordinateRegion(center: center, span: span)
+            mapView.setRegion(region, animated: true)
+            isSpanSet = true
+        }
     }
     
     //MARK: - Selectors
@@ -90,6 +95,7 @@ class MainViewController: BaseVC {
     
     //MARK: - IBActions
     @IBAction func switchToDefaultZoneTapped(_ sender: Any) {
+        isSpanSet = false
         self.geoFenceZoneViewModel.updateToDefaultZone()
     }
     @IBAction func radiusSliderChanged(_ sender: Any) {
