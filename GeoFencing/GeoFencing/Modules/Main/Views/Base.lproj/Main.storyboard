@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-KP-lLl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="133.5"/>
+                                <rect key="frame" x="0.0" y="332" width="414" height="232.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPd-1D-Zm8">
                                         <rect key="frame" x="8" y="16" width="42" height="21"/>
@@ -30,18 +30,32 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGU-wc-cHw">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter some SSID to check the zone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGU-wc-cHw">
                                         <rect key="frame" x="80" y="9.5" width="324" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-ih-fmY">
-                                        <rect key="frame" x="80" y="58.5" width="324" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-Ub-dt0">
-                                        <rect key="frame" x="10" y="112.5" width="394" height="21"/>
+                                        <rect key="frame" x="10" y="151.5" width="394" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-LM-j7d">
+                                        <rect key="frame" x="127.5" y="202.5" width="159" height="30"/>
+                                        <state key="normal" title="Switch To Default Zone"/>
+                                        <connections>
+                                            <action selector="switchToDefaultZoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSZ-Ym-p9S"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2cd-mB-grI">
+                                        <rect key="frame" x="78" y="60.5" width="328" height="31"/>
+                                        <connections>
+                                            <action selector="radiusSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zQf-1u-xhC"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- meters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDH-p9-us2">
+                                        <rect key="frame" x="170.5" y="110.5" width="73" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,32 +64,45 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="6UT-Ub-dt0" firstAttribute="leading" secondItem="CXu-KP-lLl" secondAttribute="leading" constant="10" id="2bQ-FP-P0a"/>
+                                    <constraint firstItem="cH3-LM-j7d" firstAttribute="top" secondItem="6UT-Ub-dt0" secondAttribute="bottom" constant="30" id="492-oG-0ya"/>
+                                    <constraint firstItem="2cd-mB-grI" firstAttribute="top" secondItem="xGU-wc-cHw" secondAttribute="bottom" constant="17" id="6BW-J2-dPw"/>
+                                    <constraint firstItem="MDH-p9-us2" firstAttribute="top" secondItem="2cd-mB-grI" secondAttribute="bottom" constant="20" id="9M4-Cv-z5y"/>
                                     <constraint firstItem="mPd-1D-Zm8" firstAttribute="top" secondItem="CXu-KP-lLl" secondAttribute="top" constant="16" id="DYL-o7-Odc"/>
-                                    <constraint firstItem="zgf-ih-fmY" firstAttribute="top" secondItem="xGU-wc-cHw" secondAttribute="bottom" constant="15" id="HWE-jb-c0e"/>
+                                    <constraint firstItem="6UT-Ub-dt0" firstAttribute="top" secondItem="MDH-p9-us2" secondAttribute="bottom" constant="20" id="Ev2-0Q-xgo"/>
+                                    <constraint firstItem="2cd-mB-grI" firstAttribute="centerY" secondItem="esr-Wa-IJz" secondAttribute="centerY" id="JVa-Cw-kzA"/>
                                     <constraint firstItem="xGU-wc-cHw" firstAttribute="leading" secondItem="mPd-1D-Zm8" secondAttribute="trailing" constant="30" id="KX0-Qb-DO0"/>
                                     <constraint firstItem="mPd-1D-Zm8" firstAttribute="leading" secondItem="CXu-KP-lLl" secondAttribute="leading" constant="8" id="NW1-Pu-9QH"/>
-                                    <constraint firstItem="zgf-ih-fmY" firstAttribute="trailing" secondItem="xGU-wc-cHw" secondAttribute="trailing" id="RvC-0V-wNl"/>
-                                    <constraint firstItem="6UT-Ub-dt0" firstAttribute="top" secondItem="zgf-ih-fmY" secondAttribute="bottom" constant="20" id="TH8-pw-I0p"/>
+                                    <constraint firstAttribute="bottom" secondItem="cH3-LM-j7d" secondAttribute="bottom" id="QS9-Pm-5DL"/>
+                                    <constraint firstItem="cH3-LM-j7d" firstAttribute="centerX" secondItem="CXu-KP-lLl" secondAttribute="centerX" id="SVd-pT-yFu"/>
+                                    <constraint firstItem="MDH-p9-us2" firstAttribute="centerX" secondItem="CXu-KP-lLl" secondAttribute="centerX" id="Ymw-C0-gyI"/>
                                     <constraint firstAttribute="trailing" secondItem="6UT-Ub-dt0" secondAttribute="trailing" constant="10" id="Zut-qI-qaK"/>
+                                    <constraint firstAttribute="trailing" secondItem="2cd-mB-grI" secondAttribute="trailing" constant="10" id="d6Q-sA-dr1"/>
                                     <constraint firstItem="esr-Wa-IJz" firstAttribute="leading" secondItem="mPd-1D-Zm8" secondAttribute="leading" id="gj2-RS-lb8"/>
-                                    <constraint firstItem="esr-Wa-IJz" firstAttribute="centerY" secondItem="zgf-ih-fmY" secondAttribute="centerY" id="hZI-HQ-kGt"/>
+                                    <constraint firstItem="2cd-mB-grI" firstAttribute="leading" secondItem="esr-Wa-IJz" secondAttribute="trailing" constant="15" id="hdh-Q6-QaP"/>
                                     <constraint firstAttribute="trailing" secondItem="xGU-wc-cHw" secondAttribute="trailing" constant="10" id="jDp-Bq-kuw"/>
-                                    <constraint firstItem="zgf-ih-fmY" firstAttribute="leading" secondItem="xGU-wc-cHw" secondAttribute="leading" id="kmG-H5-U9F"/>
                                     <constraint firstItem="xGU-wc-cHw" firstAttribute="centerY" secondItem="mPd-1D-Zm8" secondAttribute="centerY" id="mP6-6U-Wb3"/>
-                                    <constraint firstAttribute="bottom" secondItem="6UT-Ub-dt0" secondAttribute="bottom" id="uAQ-DS-Wze"/>
                                 </constraints>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-GX-AMe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="288"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CXu-KP-lLl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5hV-tg-h8f"/>
+                            <constraint firstItem="X7g-GX-AMe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6l5-2A-j5N"/>
+                            <constraint firstItem="X7g-GX-AMe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HsL-Xs-lWz"/>
+                            <constraint firstItem="CXu-KP-lLl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ILe-aK-vNf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CXu-KP-lLl" secondAttribute="trailing" id="RFA-on-eF3"/>
-                            <constraint firstItem="CXu-KP-lLl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fu9-ko-z8t"/>
+                            <constraint firstItem="CXu-KP-lLl" firstAttribute="top" secondItem="X7g-GX-AMe" secondAttribute="bottom" id="d0y-C0-Es7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X7g-GX-AMe" secondAttribute="trailing" id="jba-MH-IMR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="radiusTextField" destination="zgf-ih-fmY" id="BqL-sH-Hbm"/>
+                        <outlet property="mapView" destination="X7g-GX-AMe" id="I2E-hB-Jyt"/>
+                        <outlet property="radiusLabel" destination="MDH-p9-us2" id="O0e-3E-a5J"/>
+                        <outlet property="radiusSlider" destination="2cd-mB-grI" id="6sB-sw-OgX"/>
                         <outlet property="ssidTextField" destination="xGU-wc-cHw" id="AwE-6j-7vA"/>
                         <outlet property="statusLabel" destination="6UT-Ub-dt0" id="SXR-rn-36P"/>
                     </connections>

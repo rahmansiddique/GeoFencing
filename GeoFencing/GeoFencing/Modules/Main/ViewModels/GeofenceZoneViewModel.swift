@@ -14,9 +14,13 @@ class GeofenceZoneViewModel:NSObject{
     //MARK: - Properties
     private let reachability = try! Reachability()
     private var observableModel:ObservableModel<GeofenceZone>
-    private var deviceCurrentLocation:CLLocation?
+    private var deviceCurrentLocation:CLLocation? {
+        didSet{
+            deviceLocationChangeCallback(deviceCurrentLocation?.coordinate)
+        }
+    }
     private var isFirstTimeLocationAddedToGeoFence = false
-    private var userInputSSIDName:String = "" {
+    private var userInputSSIDString:String = "" {
         didSet{
             processResult()
         }
@@ -26,10 +30,17 @@ class GeofenceZoneViewModel:NSObject{
             resultStringUpdate(resultString)
         }
     }
+    private var radius:Double = 500 {
+        didSet{
+            radiusUpdatedCallback(prepareRadiusString())
+        }
+    }
+    private var defaultRegion:CLCircularRegion?
     
     //MARK: - Callbacks
     var resultStringUpdate : ((String)->Void) = {_ in }
-    
+    var deviceLocationChangeCallback : ((CLLocationCoordinate2D?)->Void) = {_ in}
+    var radiusUpdatedCallback : ((String)->Void) = {_ in}
     
     //MARK: - Initializer
     init(_ geoFenceZone : GeofenceZone = GeofenceZone()) {
@@ -63,12 +74,12 @@ class GeofenceZoneViewModel:NSObject{
             print("Could not start reachability notifier")
         }
     }
-
+    
     private func isDeviceInsideGeoFence()->Bool{
         var isInsideGeoFence = false
         
         if let currentWifiSSID = self.observableModel.value.wifiSSID{
-            if currentWifiSSID == userInputSSIDName{
+            if currentWifiSSID == userInputSSIDString{
                 isInsideGeoFence = true
             }
         }
@@ -89,24 +100,43 @@ class GeofenceZoneViewModel:NSObject{
         }
     }
     
+    private func prepareRadiusString()->String{
+        return String(format:"%.2f meters",radius)
+    }
+    
     func updateRegion(with newRadius:Double){
+        radius = newRadius
         guard let oldRegion = self.observableModel.value.region else {return}
         self.observableModel.value.region = CLCircularRegion(center: oldRegion.center, radius: newRadius, identifier: oldRegion.identifier)
     }
     
+    func updateRegion(with newCenter:CLLocationCoordinate2D){
+        guard let oldRegion = self.observableModel.value.region else {return}
+        self.observableModel.value.region = CLCircularRegion(center: newCenter, radius: oldRegion.radius, identifier: oldRegion.identifier)
+        deviceLocationChangeCallback(newCenter)
+    }
+    
     func updateSSID(with newSSID:String){
-        self.userInputSSIDName = newSSID
+        self.userInputSSIDString = newSSID
+    }
+    
+    func updateToDefaultZone(){
+        guard let defaultRegion = self.defaultRegion else {return}
+        self.observableModel.value.region = defaultRegion
+        deviceLocationChangeCallback(defaultRegion.center)
     }
 }
 
 extension GeofenceZoneViewModel:LocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latestLocation = locations.first else{return}
-        deviceCurrentLocation = latestLocation
+
         if !isFirstTimeLocationAddedToGeoFence{
+            deviceCurrentLocation = latestLocation
             isFirstTimeLocationAddedToGeoFence = true
-            let radius = 100.0
-            self.observableModel.value.region = CLCircularRegion(center: latestLocation.coordinate, radius: radius, identifier: "defaultRegion")
+            let region = CLCircularRegion(center: latestLocation.coordinate, radius: radius, identifier: "defaultRegion")
+            self.observableModel.value.region = region
+            self.defaultRegion = region
         }
     }
     
