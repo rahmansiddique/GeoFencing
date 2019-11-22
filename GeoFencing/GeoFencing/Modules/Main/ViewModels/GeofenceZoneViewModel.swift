@@ -125,6 +125,9 @@ class GeofenceZoneViewModel:NSObject{
         self.observableModel.value.region = defaultRegion
         deviceLocationChangeCallback(defaultRegion.center)
     }
+    func getZonesCurrentSSID()->String?{
+        return self.observableModel.value.wifiSSID
+    }
 }
 
 extension GeofenceZoneViewModel:LocationManagerDelegate{

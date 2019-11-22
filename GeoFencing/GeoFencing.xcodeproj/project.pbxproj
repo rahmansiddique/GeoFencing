@@ -21,7 +21,18 @@
 		8837ADA323788CB100A690F5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837ADA123788CB100A690F5 /* Reachability.swift */; };
 		8844109D2385A34800B877D7 /* ObservableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844109C2385A34800B877D7 /* ObservableModel.swift */; };
 		88D253ED23848B34005C3D84 /* GeofenceZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D253EC23848B34005C3D84 /* GeofenceZoneViewModel.swift */; };
+		88F0E38C23882134007AD95C /* GeoFencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0E38B23882134007AD95C /* GeoFencingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88F0E38E23882134007AD95C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8837AD562378279400A690F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837AD5D2378279400A690F5;
+			remoteInfo = GeoFencing;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8837AD5E2378279400A690F5 /* GeoFencing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoFencing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +53,9 @@
 		8837ADA123788CB100A690F5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8844109C2385A34800B877D7 /* ObservableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableModel.swift; sourceTree = "<group>"; };
 		88D253EC23848B34005C3D84 /* GeofenceZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceZoneViewModel.swift; sourceTree = "<group>"; };
+		88F0E38923882134007AD95C /* GeoFencingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoFencingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F0E38B23882134007AD95C /* GeoFencingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFencingTests.swift; sourceTree = "<group>"; };
+		88F0E38D23882134007AD95C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88F0E38623882134007AD95C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8837AD602378279400A690F5 /* GeoFencing */,
+				88F0E38A23882134007AD95C /* GeoFencingTests */,
 				8837AD5F2378279400A690F5 /* Products */,
 				8837AD9223782F9400A690F5 /* Frameworks */,
 			);
@@ -69,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				8837AD5E2378279400A690F5 /* GeoFencing.app */,
+				88F0E38923882134007AD95C /* GeoFencingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +279,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		88F0E38A23882134007AD95C /* GeoFencingTests */ = {
+			isa = PBXGroup;
+			children = (
+				88F0E38B23882134007AD95C /* GeoFencingTests.swift */,
+				88F0E38D23882134007AD95C /* Info.plist */,
+			);
+			path = GeoFencingTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +308,24 @@
 			productReference = 8837AD5E2378279400A690F5 /* GeoFencing.app */;
 			productType = "com.apple.product-type.application";
 		};
+		88F0E38823882134007AD95C /* GeoFencingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F0E39023882134007AD95C /* Build configuration list for PBXNativeTarget "GeoFencingTests" */;
+			buildPhases = (
+				88F0E38523882134007AD95C /* Sources */,
+				88F0E38623882134007AD95C /* Frameworks */,
+				88F0E38723882134007AD95C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F0E38F23882134007AD95C /* PBXTargetDependency */,
+			);
+			name = GeoFencingTests;
+			productName = GeoFencingTests;
+			productReference = 88F0E38923882134007AD95C /* GeoFencingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,6 +338,10 @@
 				TargetAttributes = {
 					8837AD5D2378279400A690F5 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					88F0E38823882134007AD95C = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 8837AD5D2378279400A690F5;
 					};
 				};
 			};
@@ -305,6 +359,7 @@
 			projectRoot = "";
 			targets = (
 				8837AD5D2378279400A690F5 /* GeoFencing */,
+				88F0E38823882134007AD95C /* GeoFencingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,6 +372,13 @@
 				8837AD6E2378279600A690F5 /* LaunchScreen.storyboard in Resources */,
 				8837AD6B2378279600A690F5 /* Assets.xcassets in Resources */,
 				8837AD692378279400A690F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F0E38723882134007AD95C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +402,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88F0E38523882134007AD95C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F0E38C23882134007AD95C /* GeoFencingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88F0E38F23882134007AD95C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837AD5D2378279400A690F5 /* GeoFencing */;
+			targetProxy = 88F0E38E23882134007AD95C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8837AD672378279400A690F5 /* Main.storyboard */ = {
@@ -518,6 +596,46 @@
 			};
 			name = Release;
 		};
+		88F0E39123882134007AD95C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C383N3HMFY;
+				INFOPLIST_FILE = GeoFencingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = systemsltd.GeoFencingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoFencing.app/GeoFencing";
+			};
+			name = Debug;
+		};
+		88F0E39223882134007AD95C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C383N3HMFY;
+				INFOPLIST_FILE = GeoFencingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = systemsltd.GeoFencingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoFencing.app/GeoFencing";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -535,6 +653,15 @@
 			buildConfigurations = (
 				8837AD732378279600A690F5 /* Debug */,
 				8837AD742378279600A690F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F0E39023882134007AD95C /* Build configuration list for PBXNativeTarget "GeoFencingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F0E39123882134007AD95C /* Debug */,
+				88F0E39223882134007AD95C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
